@@ -1,0 +1,20 @@
+[project]
+name = "zelotes-mouse"
+version = "0.1.0"
+description = "Controle multiplataforma do mouse Zelotes C-18"
+authors = [
+    { name = "João Carlos Pereira", email = "jcp2105@gmail.com" }
+]
+license = "Apache-2.0"
+requires-python = ">=3.12"
+dependencies = [
+    "hidapi>=0.15.0",
+    "pyside6>=6.12.0",
+]
+
+[project.scripts]
+zelotes-mouse = "zelotes_mouse:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"

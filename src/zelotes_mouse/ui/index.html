@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>C-18 API</title>
+  <style>
+    body { font: 16px/1.5 sans-serif; max-width: 40rem; margin: 2rem auto; color: #2a2118; background: #f3efe6; }
+    code { font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <h1>C-18</h1>
+  <p>A janela do aplicativo é o controle. Esta página descreve a API local para outros sistemas.</p>
+  <p>Aplicar um perfil usa <code>POST /api/apply</code>. Polling aceita 125, 250, 500 e 1000 Hz.</p>
+  <pre>curl -s http://127.0.0.1:8765/api/capabilities
+
+curl -s -X POST http://127.0.0.1:8765/api/apply \
+  -H 'Content-Type: application/json' \
+  -d '{"perfil":1,"hz":1000,"luz":{"modo":"padrao","nivel":1,"brilho":10,"velocidade":10,"cor":"#c45c26"},"dpi":[15,25,40,70,100]}'</pre>
+  <p>Sem <code>luz</code> e sem <code>dpi</code>, o pedido só grava perfil e polling.</p>
+</body>
+</html>

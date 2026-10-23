@@ -1,0 +1,4 @@
+# Zelotes C-18 (SOAI). Permite abrir a interface de controle sem root.
+# Copie para /etc/udev/rules.d/ e reconecte o mouse.
+SUBSYSTEM=="usb", ATTR{idVendor}=="12c9", ATTR{idProduct}=="2003", MODE="0660", GROUP="plugdev", TAG+="uaccess"
+KERNEL=="hidraw*", ATTRS{idVendor}=="12c9", ATTRS{idProduct}=="2003", MODE="0660", GROUP="plugdev", TAG+="uaccess"
